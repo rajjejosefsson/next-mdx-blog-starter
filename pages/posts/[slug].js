@@ -8,7 +8,6 @@ import path from 'path'
 import {postFilePaths, POSTS_PATH} from '../../utils/mdxUtils'
 import CustomLink from '../../components/CustomLink'
 import PageLayout from '../../components/PageLayout'
-import SEO from '../../components/Seo'
 import mdxPrism from 'mdx-prism'
 
 // Custom components/renderers to pass to MDX.
@@ -24,11 +23,12 @@ const components = {
   Head,
 }
 
+// TODO: rjrj add blog SEO
+
 export default function PostPage({source, frontMatter}) {
   const content = hydrate(source, {components})
   return (
     <PageLayout>
-      <SEO />
       <div className="post-header">
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (

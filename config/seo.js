@@ -1,16 +1,17 @@
 module.exports = {
-  title: 'ACME Storefront | Powered by Next.js Commerce',
-  titleTemplate: '%s - ACME Storefront',
-  description: 'Next.js Commerce -> https://www.nextjs.org/commerce',
+  title: 'My Name',
+  titleTemplate: '%s - My Name',
+  description: 'Come check out how username can help you develop your skills',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://nextjs.org/commerce',
-    site_name: 'Next.js Commerce',
+    url: 'https://yoursite.org/',
+    site_name: 'My Name',
+    images: [],
   },
   twitter: {
-    handle: '@nextjs',
-    site: '@nextjs',
+    handle: '@username',
+    site: '@username',
     cardType: 'summary_large_image',
   },
 }
