@@ -5,7 +5,7 @@
 
 Demo website:
 
-<a href="https://next-mdx-blog-three.vercel.app">
+<a href="https://next-mdx-blog-starter.vercel.app/">
   <img
     width="500"
     alt="next-mdx-blog starter application."
