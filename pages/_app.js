@@ -4,6 +4,8 @@ export default function App({Component, pageProps}) {
   return (
     <>
       <DefaultSeo
+        title="site title"
+        description="site description"
         openGraph={{
           type: 'website',
           locale: 'en_IE',
