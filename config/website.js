@@ -4,4 +4,5 @@ module.exports = {
   linkedin: 'https://www.linkedin.com/in/username/',
   youtube: '',
   rss: 'https://yourdomain/blog/rss.xml',
+  authorName: 'your name',
 }

@@ -4,11 +4,13 @@ import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import {BlogJsonLd} from 'next-seo'
 import path from 'path'
 import {postFilePaths, POSTS_PATH} from '../../utils/mdxUtils'
 import CustomLink from '../../components/CustomLink'
 import PageLayout from '../../components/PageLayout'
 import mdxPrism from 'mdx-prism'
+import website from '../../config/website'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -23,12 +25,20 @@ const components = {
   Head,
 }
 
-// TODO: rjrj add blog SEO
-
 export default function PostPage({source, frontMatter}) {
   const content = hydrate(source, {components})
+
   return (
     <PageLayout>
+      <BlogJsonLd
+        url="https://example.com/blog"
+        title={source.scope.title}
+        images={source.scope.images}
+        datePublished={source.scope.datePublished}
+        dateModified={source.scope.dateModified}
+        authorName={source.scope.authorName || website.authorName}
+        description={source.scope.description}
+      />
       <div className="post-header">
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
