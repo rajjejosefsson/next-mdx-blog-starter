@@ -1,0 +1,35 @@
+---
+title: React Code
+description: Testing Markdown
+date: '2020-08-01'
+---
+
+> Testing block quote
+
+```jsx{4,5,8-10}
+const SUSPENSE_CONFIG = {timeoutMs: 2000}
+
+function App() {
+  const [resource, setResource] = useState(initialResource)
+  const [startTransition, isPending] = useTransition(SUSPENSE_CONFIG)
+  return (
+    <>
+      <button
+        disabled={isPending}
+        onClick={() => {
+          startTransition(() => {
+            const nextUserId = getNextId(resource.userId)
+            setResource(fetchProfileData(nextUserId))
+          })
+        }}
+      >
+        Next
+      </button>
+      {isPending ? ' Loading...' : null}
+      <Suspense fallback={<Spinner />}>
+        <ProfilePage resource={resource} />
+      </Suspense>
+    </>
+  )
+}
+```

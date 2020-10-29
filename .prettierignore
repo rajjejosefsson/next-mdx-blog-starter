@@ -1,0 +1,19 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+lib-cov
+coverage
+build
+
+node_modules
+.next
+.DS_Store
+public
+.env
+
